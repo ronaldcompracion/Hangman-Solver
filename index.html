@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Solver</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- AUDIO -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="assets/music/calm_before_a_storm-247781.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="successSound">
+        <source src="assets/music/completed_sfx.mp3" type="audio/mpeg">
+    </audio>
+    <!-- END SA AUDIO -->
+
+
+
+
+    <!-- VIDEO -->
+    <video autoplay loop muted playsi9nline id="bgVideo" style="filter: blur(3px);">
+        <source src="assets/video/bg_final_hangman.mp4" type="video/mp4" >
+    </video>
+    <!-- END SA VIDEO -->
+
+    <!-- CONTAINER -->
+    <div class="container">
+        <div class="card">
+            <div class="step-title mb-2"><b>Step 1: Enter Word Length</b></div>
+            <input type="number" id="wordLength" class="form-control mb-3" min="1" placeholder="0" oninput="generateLetterBoxes()">
+            <div id="wordLengthWarning" class="warning-message" style="display: none;">
+                Please enter a word length to start solving.
+            </div>
+            
+            <div class="step-title mb-2"><b>Step 2: Your Word</b></div>
+            <div id="wordDisplay" class="mb-3"></div>
+            
+            <div class="step-title mb-2"><b>Step 3: Incorrect Letters</b></div>
+            <input type="text" id="incorrectLetters" class="form-control mb-3" placeholder="Enter incorrect letters" oninput="updateIncorrectLetters()">
+            <div id="incorrectDisplay" class="mb-3"></div>
+            
+            <div id="solverSuggestion" class="suggestion"></div>
+            <button id="resetButton" class="btn btn-primary w-100 mt-3" onclick="resetGame()">
+                <i class="bi bi-arrow-clockwise"></i>
+            </button>
+        </div>
+    </div>
+    <!-- END CONTAINER -->
+
+    
+
+    <!-- FOOTER -->
+        <footer class="bg-body-tertiary text-center text-lg-start">
+            <!-- Copyright -->
+            <div class="text-end p-1" style="background-color: rgba(0, 0, 0, 0.05);">
+                Developed for ITE19 | <a href="http://carsu.edu.ph">Caraga State University</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+    <!-- FOOTER -->
+
+        <!-- NOTIFICATION -->
+
+        <!--END NOTIFICATION -->
+    
+   <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
